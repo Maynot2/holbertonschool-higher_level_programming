@@ -26,6 +26,8 @@ int check_cycle(listint_t *list)
 		if (tortoise == hare)
 			return (1);
 		tortoise = tortoise->next;
+		if (hare.next.next == NULL)
+			break;
 		hare = hare->next->next;
 	}
 	return (0);
