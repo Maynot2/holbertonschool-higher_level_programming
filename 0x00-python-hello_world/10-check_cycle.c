@@ -19,7 +19,7 @@ int check_cycle(listint_t *list)
 		return (0);
 
 	tortoise = list;
-	hare = list->next;
+	hare = list;
 
 	while (hare->next)
 	{
