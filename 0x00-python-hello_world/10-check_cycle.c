@@ -15,21 +15,15 @@ int check_cycle(listint_t *list)
 	listint_t *hare;
 	listint_t *tortoise;
 
-	if (list == NULL || list->next == NULL)
-		return (0);
-
-	if (list->next == list)
-		return (1);
-
 	tortoise = list;
-	hare = list->next;
+	hare = list;
 
-	while (hare->next)
+	while (hare && hare->next)
 	{
+		tortoise = tortoise->next;
+		hare = hare->next->next;
 		if (tortoise == hare)
 			return (1);
-		hare = hare->next->next;
-		tortoise = tortoise->next;
 	}
 	return (0);
 }
