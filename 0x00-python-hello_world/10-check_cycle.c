@@ -22,16 +22,14 @@ int check_cycle(listint_t *list)
 		return (1);
 
 	tortoise = list;
-	hare = list;
+	hare = list->next;
 
 	while (hare->next)
 	{
-		hare = hare->next->next;
-		tortoise = tortoise->next;
 		if (tortoise == hare)
 			return (1);
-		if (hare->next->next == NULL)
-			break;
+		hare = hare->next->next;
+		tortoise = tortoise->next;
 	}
 	return (0);
 }
