@@ -1,6 +1,15 @@
 #include "lists.h"
 #include <stdio.h>
 
+/**
+  * insert_node - Inserts a node given a number.
+  * @head: A pointer to pointer to listint_t.
+  * @number: An int.
+  *
+  * Return: A pointer to the inserted node on success.
+  *         NULL on failure.
+  */
+
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *current = NULL;
@@ -13,34 +22,22 @@ listint_t *insert_node(listint_t **head, int number)
 	node->n = number;
 	node->next = NULL;
 
-	if (*head == NULL)
-		*head = node;
+	current = *head;
+
+	if (current == NULL)
+		current = node;
 	else
-	{
-		if ((*head)->next == NULL && node->n > (*head)->n)
-		{
-			(*head)->next = node;
-			return (node);
-		}
-		current = *head;
-		if (current->next)
-			after = current->next;
 		while (current)
 		{
-			if(current->n < node->n && current->next == NULL)
-			{
+			if (current->next == NULL && node->n > current->n)
 				current->next = node;
-				break;
-			}
-			if((current->n < node->n) && (after->n > node->n))
+			else if (current->n < node->n && node->n < current->next->n)
 			{
+				after = current->next;
+				current->next = node;
 				node->next = after;
-				current->next = node;
 			}
 			current = current->next;
-			if(after->next)
-				after = after->next;
 		}
-	}
 	return (node);
 }
