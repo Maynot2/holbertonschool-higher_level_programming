@@ -7,7 +7,7 @@ last_digit = int(str(number)[-1]) * abs(number)//number
 if last_digit > 5:
     msg = "greater than 5"
 elif last_digit == 0:
-    msg = "zero" 
+    msg = "zero"
 else:
     msg = "less than 6 and not 0"
 
