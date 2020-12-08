@@ -2,8 +2,6 @@
 import random
 number = random.randint(-10000, 10000)
 
-number = 0
-
 if number == 0:
     print("Last digit of {} is 0".format(number))
 else:
