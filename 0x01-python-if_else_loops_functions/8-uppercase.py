@@ -9,6 +9,6 @@ def uppercase(str):
     str += "\n"
     for char in str[:]:
         if _islower(char):
-            print(chr(ord(char) - 32), end="")
+            print("{:c}".format(ord(char) - 32), end="")
         else:
             print(char, end="")
