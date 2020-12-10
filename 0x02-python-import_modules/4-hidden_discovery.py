@@ -7,4 +7,4 @@ if __name__ == "__main__":
 
     for el in elements:
         if el[0] != "_" and el[1] != "_":
-            print(el);
+            print(el)
