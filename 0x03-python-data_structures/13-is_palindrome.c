@@ -72,13 +72,14 @@ int is_palindrome(listint_t **head)
 		return (1);
 	last_idx = len - 1;
 
+	node_left = *head;
 	i = 0;
-	while (i <= len / 2)
+	while (i < len / 2)
 	{
-		node_left = get_node_at_index(*head, i);
-		node_right = get_node_at_index(*head, last_idx - i);
+		node_right = get_node_at_index(node_left, last_idx - (i * 2));
 		if (node_left->n != node_right->n)
 			return (0);
+		node_left = node_left->next;
 		i++;
 	}
 	return (1);
