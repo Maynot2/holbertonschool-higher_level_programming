@@ -68,6 +68,8 @@ int is_palindrome(listint_t **head)
 		return (0);
 
 	len = list_len(*head);
+	if (len == 0)
+		return (1);
 	last_idx = len - 1;
 
 	i = 0;
