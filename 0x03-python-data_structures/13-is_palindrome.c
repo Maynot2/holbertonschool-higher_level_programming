@@ -64,7 +64,7 @@ int is_palindrome(listint_t **head)
 	listint_t *node_left;
 	listint_t *node_right;
 
-	if (!head || !(*head))
+	if (!head)
 		return (0);
 
 	len = list_len(*head);
