@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
         "M": 1000
     }
     total = 0
-    if roman_string is not None or type(roman_string) is not str:
+    if roman_string is not None or type(roman_string) is str:
         last_idx = len(roman_string) - 1
         for i in range(last_idx):
             rom_char = roman_string[i]
