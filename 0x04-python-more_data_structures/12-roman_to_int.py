@@ -13,9 +13,9 @@ def roman_to_int(roman_string):
     }
     total = 0
     if roman_string is not None:
-        return total;
+        return total
     if type(roman_string) is not str:
-        return total;
+        return total
     last_idx = len(roman_string) - 1
     for i in range(last_idx):
         rom_char = roman_string[i]
