@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * print_bytes - Prints up to 10 bytes
+ * @pbo: A PyBytesObject
+ * @size: A Py_ssize_t
+ *
+ * Return: Nothing.
+ */
+
 void print_bytes(PyBytesObject *pbo, Py_ssize_t size)
 {
 	Py_ssize_t i = 0;
@@ -10,6 +18,13 @@ void print_bytes(PyBytesObject *pbo, Py_ssize_t size)
 		printf(" %02x", (uint8_t)pbo->ob_sval[i]);
 	puts("");
 }
+
+/**
+ * print_python_bytes - Prints info about python bytes
+ * @p: A Pyobject
+ *
+ * Return: Nothing.
+ */
 
 void print_python_bytes(PyObject *p)
 {
@@ -33,7 +48,7 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_python_list_info - Prints info about python
+ * print_python_list - Prints info about python
  * @p: A Pyobject
  *
  * Return: Nothing.
