@@ -35,14 +35,14 @@ void print_python_bytes(PyObject *p)
 	puts("[.] bytes object info");
 	if (strcmp("bytes", p->ob_type->tp_name) == 0)
 	{
-		printf(" size: %lu\n", size);
-		printf(" trying string: %s\n", pbo->ob_sval);
-		printf(" first %lu bytes:", print_size + 1);
+		printf("  size: %lu\n", size);
+		printf("  trying string: %s\n", pbo->ob_sval);
+		printf("  first %lu bytes:", print_size + 1);
 		print_bytes(pbo, print_size);
 	}
 	else
 	{
-		puts(" [ERROR] Invalid Bytes Object");
+		puts("  [ERROR] Invalid Bytes Object");
 	}
 
 }
