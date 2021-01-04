@@ -10,7 +10,9 @@ def safe_print_list(my_list=[], x=0):
                 if i + 1 == x:
                     print()
                 i += 1
-            except IndexError:
+            except:
                 print()
                 break
+    if i == 0:
+        print()
     return i
