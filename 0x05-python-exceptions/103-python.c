@@ -57,7 +57,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	PyFloatObject *pfo = (PyFloatObject *)p;
-	
+
 	if (strcmp("float", p->ob_type->tp_name) == 0)
 	{
 		puts("[.] float object info");
