@@ -59,6 +59,7 @@ class Square:
 
         if self.size == 0:
             print()
+            return
         for i in range(self.size + self.position[1]):
             if i >= self.position[1]:
                 for j in range(self.size + self.position[0]):
