@@ -75,5 +75,5 @@ class Square:
                 if i != self.size + self.position[1] - 1:
                     printable_sqr += '\n'
             else:
-                 printable_sqr += '\n'
+                printable_sqr += '\n'
         return printable_sqr
