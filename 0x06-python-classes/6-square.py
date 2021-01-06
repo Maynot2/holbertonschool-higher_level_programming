@@ -34,9 +34,9 @@ class Square:
         self.__size = val
 
     def is_valid_pos(self, pos):
-        if pos[0] < 0 or pos[1] < 0:
-            return False
         if not isinstance(pos[0], int) or not isinstance(pos[1], int):
+            return False
+        if pos[0] < 0 or pos[1] < 0:
             return False
         return True
 
