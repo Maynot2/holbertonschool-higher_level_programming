@@ -68,7 +68,7 @@ class SinglyLinkedList:
                     if node.next_node is None:
                         node.next_node = new_node
                         break
-                    if new_node.data <= node.next_node.data:
+                    if new_node.data < node.next_node.data:
                         next_node = node.next_node
                         node.next_node = new_node
                         new_node.next_node = next_node
