@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 import math
 
+"""This is the doc for the MagicClass module"""
+
 class MagicClass:
-    """
-        This is the MagicClass that helps compute operations on circles
-    """
+    """This is the MagicClass that helps compute operations on circles"""
 
     def __init__(self, radius):
         self._MagicClass__radius = 0
