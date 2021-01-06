@@ -65,6 +65,9 @@ class Square:
 
         printable_sqr = ''
 
+        if self.size == 0:
+            return printable_sqr
+
         for i in range(self.size + self.position[1]):
             if i >= self.position[1]:
                 for j in range(self.size + self.position[0]):
