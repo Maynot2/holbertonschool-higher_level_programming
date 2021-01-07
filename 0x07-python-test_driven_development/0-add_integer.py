@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Contains a simple add function"""
+import math
 
 
 def add_integer(a, b=98):
@@ -9,8 +10,8 @@ def add_integer(a, b=98):
         raise TypeError('a must be an integer')
     if type(b) not in [int, float]:
         raise TypeError('b must be an integer')
+    if float('-inf') == a or float('inf') == a:
+        raise TypeError('a must be an integer')
+    if float('-inf') == b or float('inf') == b:
+        raise TypeError('b must be an integer')
     return int(a) + int(b)
-
-if __name__ == "__main__":
-    print(add_integer(1, 2, 3))
-
