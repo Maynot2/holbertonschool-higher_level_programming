@@ -1,14 +1,14 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 
-# check not enough arguments raises TypeError
->>> add_integer()
+# check a equal to positive infinity raises TypeError
+>>> add_integer(float('inf'), 3)
 Traceback (most recent call last):
-TypeError: add_integer() missing 1 required positional argument: 'a'
+TypeError: a must be an integer
 
-# check too many arguments raises TypeError
->>> add_integer(1, 2, 3) #doctest: +ELLIPSIS
+# check b equal to negative infinity raises TypeError
+>>> add_integer(3, float('-inf'))
 Traceback (most recent call last):
-TypeError: add_integer() takes from 1 to 2 positional arguments but ... were given
+TypeError: b must be an integer
 
 # check wrong type arg a raises TypeError
 >>> add_integer("hello", 3)
