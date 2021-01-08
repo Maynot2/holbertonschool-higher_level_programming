@@ -1,0 +1,40 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation('once upon a time there was a princess.')
+once upon a time there was a princess.
+<BLANKLINE>
+
+>>> text_indentation('')
+
+>>> text_indentation("Lorem ipsum dolor: consectetur adipiscing elit. Quonam modo?""")
+Lorem ipsum dolor:
+<BLANKLINE>
+consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+
+>>> text_indentation("Lorem ipsum dolor: consectetur adipiscing elit. Quonam modo""")
+Lorem ipsum dolor:
+<BLANKLINE>
+consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo
+
+>>> text_indentation("Lorem ipsum dolor: consectetur adipiscing elit. Quonam modo    """)
+Lorem ipsum dolor:
+<BLANKLINE>
+consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo
+
+>>> text_indentation("Lorem ipsum dolor: consectetur adipiscing elit. Quonam modo    \t""")
+Lorem ipsum dolor:
+<BLANKLINE>
+consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo
