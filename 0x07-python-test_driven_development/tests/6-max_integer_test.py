@@ -35,3 +35,10 @@ class TestMaxInt(unittest.TestCase):
         list = [1, 8, 0, -3]
         res = max_integer(list)
         self.assertEqual(res, 8)
+
+    def test_max_at_the_end(self):
+        """tests when max is the last elment of the list"""
+        list = [1, 8, 0, -3, 100]
+        res = max_integer(list)
+        self.assertEqual(res, 100)
+
