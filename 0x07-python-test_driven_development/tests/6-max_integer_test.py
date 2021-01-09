@@ -25,7 +25,7 @@ class TestMaxInt(unittest.TestCase):
         self.assertEqual(res, 9)
 
     def test_max_negative_int(self):
-        """tests only negative integer in list""""
+        """tests only negative integer in list"""
         list = [-1, -3, -5, -8]
         res = max_integer(list)
         self.assertEqual(res, -1)
