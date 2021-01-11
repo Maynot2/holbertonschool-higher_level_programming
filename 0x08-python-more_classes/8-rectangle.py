@@ -75,4 +75,5 @@ class Rectangle:
 
     @static
     def bigger_or_equal(rect_1, rect_2):
+        """Given 2 rectangle instances, tests which  has the largest area"""
         return rect_1 if rect_1.area() >= rect_2.area() else rect_2
