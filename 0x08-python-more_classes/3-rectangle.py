@@ -30,22 +30,27 @@ class Rectangle:
 
     @height.setter
     def height(self, size):
+        """Sets the height"""
         if not isinstance(size, int):
             raise TypeError('height must be an integer')
         if size < 0:
             raise ValueError('height must be >= 0')
-        """Sets the height"""
         self.__height = size
 
     def area(self):
+        """Computes the area"""
         return self.width * self.height
 
     def perimeter(self):
+        """Computes the perimeter"""
         if self.width == 0 or self.height == 0:
             return 0
         return self.width * 2 + self.height * 2
 
     def __str__(self):
+        """Returns a string representation of the current instance that can be
+            evaluated by eval
+        """
         str_ = ''
         if self.width == 0 or self.height == 0:
             return str_
