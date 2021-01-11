@@ -1,13 +1,18 @@
 #!/usr/bin/python3
+"""Implementation of the N queen problem with backtracking algorythm"""
 import sys
 
 
 def is_safe(q1, q2):
+    """Checks ia queen is safe ie not under attack by another queen (same row,
+    same column, same diagonal)
+    """
     if q1[0] == q2[0] or q1[1] == q2[1]:
         return False
-    if abs(q1[0] - q2[0]) == abs(q1[1]- q2[1]):
+    if abs(q1[0] - q2[0]) == abs(q1[1] - q2[1]):
         return False
     return True
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
