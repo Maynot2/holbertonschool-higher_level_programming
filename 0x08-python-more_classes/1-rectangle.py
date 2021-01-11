@@ -6,22 +6,8 @@ class Rectangle:
     """Simulates a real world rectangle"""
     def __init__(self, width=0, height=0):
         """Initialises a rectangle of a given width and height"""
-        self.height = height
         self.width = width
-
-    @property
-    def height(self):
-        """Retrieves the height"""
-        return self.__height
-
-    @height.setter
-    def height(self, size):
-        """Sets the height"""
-        if not isinstance(size, int):
-            raise TypeError('height must be an integer')
-        if size < 0:
-            raise ValueError('height must be >= 0')
-        self.__height = size
+        self.height = height
 
     @property
     def width(self):
@@ -36,3 +22,17 @@ class Rectangle:
         if size < 0:
             raise ValueError('width must be >= 0')
         self.__width = size
+
+    @property
+    def height(self):
+        """Retrieves the height"""
+        return self.__height
+
+    @height.setter
+    def height(self, size):
+        """Sets the height"""
+        if not isinstance(size, int):
+            raise TypeError('height must be an integer')
+        if size < 0:
+            raise ValueError('height must be >= 0')
+        self.__height = size
