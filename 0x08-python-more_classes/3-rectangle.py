@@ -54,5 +54,3 @@ class Rectangle:
             if i < self.height - 1:
                 str_ += '\n'
         return str_
-
-
