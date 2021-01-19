@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """A module that tweak the int class"""
 
 
