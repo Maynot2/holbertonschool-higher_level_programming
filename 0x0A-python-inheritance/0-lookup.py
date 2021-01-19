@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """Object helpers function(s)"""
 
 
