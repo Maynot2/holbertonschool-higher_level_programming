@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """A module about geometric shapes"""
 Rectangle = __import__('9-rectangle').Rectangle
 
