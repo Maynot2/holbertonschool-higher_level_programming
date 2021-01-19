@@ -1,5 +1,6 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """Instance helper function(s)"""
+
 
 def inherits_from(obj, a_class):
     """Checks if an object is an instance of a subclass of the given class"""
