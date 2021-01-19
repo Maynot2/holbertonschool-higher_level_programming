@@ -1,5 +1,6 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """Custom list behavior"""
+
 
 class MyList(list):
     """Manipulates lists"""
