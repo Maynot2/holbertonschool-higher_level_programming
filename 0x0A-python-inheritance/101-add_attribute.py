@@ -1,5 +1,6 @@
 #!/usr/binpython3
-"""Write a function that adds a new attribute to an object if it’s possible"""
+"""Write a function that adds a new attribute to an object if it’s possible
+"""
 
 
 def add_attribute(obj, name, value):
