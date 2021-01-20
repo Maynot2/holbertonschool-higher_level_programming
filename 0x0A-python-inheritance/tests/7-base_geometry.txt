@@ -2,13 +2,6 @@
 
 >>> bg = BaseGeometry()
 
->>> bg.integer_validator()
-Traceback (most recent call last):
-TypeError: integer_validator() takes exactly 3 arguments (1 given)
-
->>> bg.integer_validator("my_int")
-Traceback (most recent call last):
-TypeError: integer_validator() takes exactly 3 arguments (2 given)
 
 >>> bg.integer_validator("my_int", 8)
 
@@ -71,3 +64,11 @@ ValueError: my_int must be greater than 0
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() takes exactly 3 arguments (1 given)
+
+>>> bg.integer_validator("my_int")
+Traceback (most recent call last):
+TypeError: integer_validator() takes exactly 3 arguments (2 given)
