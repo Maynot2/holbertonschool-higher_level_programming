@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Contains jason file and jason string manipulation function(s)"""
 import json
