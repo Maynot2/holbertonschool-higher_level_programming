@@ -15,4 +15,4 @@ if __name__ == '__main__':
     if os.path.isfile('add_item.json'):
         args = load_from_json_file('add_item.json') + args
     save_to_json_file(args, 'add_item.json')
-    print(load_from_json_file('add_item.json'))
+    load_from_json_file('add_item.json')
