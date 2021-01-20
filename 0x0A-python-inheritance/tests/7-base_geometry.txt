@@ -44,6 +44,14 @@ TypeError: my_byte_array must be an integer
 Traceback (most recent call last):
 TypeError: my_str must be an integer
 
+>>> bg.integer_validator("my_int")
+Traceback (most recent call last):
+TypeError: integer_validator() takes exactly 3 arguments (2 given)
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() takes exactly 3 arguments (1 given)
+
 >>> bg.integer_validator("my_bool", True)
 Traceback (most recent call last):
 TypeError: my_bool must be an integer
