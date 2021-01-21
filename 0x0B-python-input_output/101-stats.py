@@ -10,10 +10,9 @@ def print_size_errors(size, error_counts):
     for k, v in sorted(error_counts.items()):
         print('{}: {}'.format(k, v))
 
-
 def is_valid_line(line):
     """Check if line is a valid request"""
-    regex = '.+ \d{3} \d+'
+    regex = '.+ \d+'
     return not not re.match(regex, line)
 
 
@@ -36,4 +35,4 @@ if __name__ == '__main__':
                     print_size_errors(total_size, error_counts)
         print_size_errors(total_size, error_counts)
     except KeyboardInterrupt:
-        print_size_errors(total_size, error_counts)
+                    print_size_errors(total_size, error_counts)
