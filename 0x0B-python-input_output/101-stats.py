@@ -15,6 +15,7 @@ def is_valid_line(line):
     regex = '\d+.\d+.\d+.\d+ - \[.+\] ".+" \d{3} \d+'
     return not not re.match(regex, line)
 
+
 error_counts = {}
 
 
@@ -34,4 +35,4 @@ if __name__ == '__main__':
                     print_size_errors(total_size, error_counts)
         print_size_errors(total_size, error_counts)
     except KeyboardInterrupt:
-                    print_size_errors(total_size, error_counts)
+        print_size_errors(total_size, error_counts)
