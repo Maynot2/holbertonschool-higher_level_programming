@@ -21,7 +21,7 @@ if __name__ == '__main__':
         for line in sys.stdin:
             count += 1
             tokens = line.split(' ')
-            if len(tokens) >= 2 and re.match('\d.\d.\d.\d', tokens[0]):
+            if len(tokens) >= 2 and re.match('\d+.\d+.\d+.\d+', tokens[0]):
                 size = int(tokens[-1])
                 total_size += size
                 error = tokens[-2]
