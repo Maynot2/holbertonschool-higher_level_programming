@@ -18,9 +18,9 @@ if __name__ == '__main__':
         count = 0
         total_size = 0
         for line in sys.stdin:
-            count += 1
             tokens = line.split(' ')
             if len(tokens) >= 2:
+                count += 1
                 size = int(tokens[-1])
                 total_size += size
                 error = tokens[-2]
