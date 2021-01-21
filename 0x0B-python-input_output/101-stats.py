@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """reads stdin line by line and computes metrics:"""
 import sys
+import re
 
 
 def print_size_errors(size, error_counts):
@@ -18,9 +19,9 @@ if __name__ == '__main__':
         count = 0
         total_size = 0
         for line in sys.stdin:
+            count += 1
             tokens = line.split(' ')
-            if len(tokens) >= 2:
-                count += 1
+            if len(tokens) >= 2 and re.match('\d.\d.\d.\d', tokens[0]):
                 size = int(tokens[-1])
                 total_size += size
                 error = tokens[-2]
