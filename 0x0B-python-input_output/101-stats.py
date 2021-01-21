@@ -10,6 +10,7 @@ def print_size_errors(size, error_counts):
     for k, v in sorted(error_counts.items()):
         print('{}: {}'.format(k, v))
 
+
 def is_valid_line(line):
     """Check if line is a valid request"""
     regex = '\d+.\d+.\d+.\d+ - \[.+\] ".+" \d{3} \d+'
