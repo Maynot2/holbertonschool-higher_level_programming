@@ -13,7 +13,7 @@ def print_size_errors(size, error_counts):
 
 def is_valid_line(line):
     """Check if line is a valid request"""
-    regex = '\d+.\d+.\d+.\d+ - \[.+\] ".+" \d{3} \d+'
+    regex = '.+ \d{3} \d+'
     return not not re.match(regex, line)
 
 
