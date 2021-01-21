@@ -10,6 +10,10 @@ def print_size_errors(size, error_counts):
     for k, v in sorted(error_counts.items()):
         print('{}: {}'.format(k, v))
 
+def is_valid_line(line):
+    """Check if line is a valid request"""
+    regex = '\d+.\d+.\d+.\d+ - \[.+\] ".+" \d{3} \d+'
+    return not not re.match(regex, line)
 
 error_counts = {}
 
@@ -21,7 +25,7 @@ if __name__ == '__main__':
         for line in sys.stdin:
             count += 1
             tokens = line.split(' ')
-            if len(tokens) >= 2 and re.match('\d+.\d+.\d+.\d+', tokens[0]):
+            if is_valid_line(line):
                 size = int(tokens[-1])
                 total_size += size
                 error = tokens[-2]
