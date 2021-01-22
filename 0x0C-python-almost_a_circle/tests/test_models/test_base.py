@@ -44,3 +44,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b3.id, 12)
         b4 = Base()
         self.assertEqual(b4.id, 3)
+
+    def test_right_number_of_objects_created(self):
+        b1 = Base()
+        b2 = Base()
+        b3 = Base(12)
+        b4 = Base()
+        self.assertEqual(Base._Base__nb_objects, 3)
