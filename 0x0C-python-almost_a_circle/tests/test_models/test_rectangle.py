@@ -211,6 +211,20 @@ class TestRectangle(unittest.TestCase):
             r.display()
         self.assertEqual(fake_out.getvalue(), expected_rec)
 
+    def test_display_rectangle_3wX2h_1xX1y_correctly(self):
+        r = Rectangle(3, 2, 1, 1)
+        expected_rec = '\n ###\n ###\n'
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+            r.display()
+        self.assertEqual(fake_out.getvalue(), expected_rec)
+
+    def test_display_rectangle_3wX3h_2xX3y_correctly(self):
+        r = Rectangle(3, 3, 2, 3)
+        expected_rec = '\n\n\n  ###\n  ###\n  ###\n'
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+            r.display()
+        self.assertEqual(fake_out.getvalue(), expected_rec)
+
     def test_print_custom_str_representation_of_rectangele_2(self):
         r = Rectangle(4, 6)
         expected_rep = '[Rectangle] (1) 0/0 - 4/6\n'
@@ -238,3 +252,65 @@ class TestRectangle(unittest.TestCase):
         with patch('sys.stdout', new = StringIO()) as fake_out:
             print(r)
         self.assertEqual(fake_out.getvalue(), expected_rep)
+
+    def test_update_no_args(self):
+        r = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r.id, 1)
+        r.update()
+        self.assertEqual(r.id, 1)
+        self.assertEqual(r.width, 10)
+        self.assertEqual(r.height, 10)
+        self.assertEqual(r.x, 10)
+        self.assertEqual(r.y, 10)
+
+    def test_update_id_attr_1(self):
+        r = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r.id, 1)
+        r.update(2)
+        self.assertEqual(r.id, 2)
+
+    def test_update_id_attr_2(self):
+        r = Rectangle(10, 10, 10, 10, 12)
+        self.assertEqual(r.id, 12)
+        r.update(1)
+        self.assertEqual(r.id, 1)
+
+    def test_update_id_attr_3(self):
+        r = Rectangle(10, 10, 10, 10, 12)
+        self.assertEqual(r.id, 12)
+        r.update(id=3)
+        self.assertEqual(r.id, 3)
+
+    def test_update_id_width_attrs(self):
+        r = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r.width, 10)
+        r.update(2, 1)
+        self.assertEqual(r.id, 2)
+        self.assertEqual(r.width, 1)
+
+    def test_update_id_width_height_attrs(self):
+        r = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r.height, 10)
+        r.update(2, 1, 1)
+        self.assertEqual(r.id, 2)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 1)
+
+    def test_update_id_width_height_x_attrs(self):
+        r = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r.height, 10)
+        r.update(2, 1, 1, 1)
+        self.assertEqual(r.id, 2)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 1)
+        self.assertEqual(r.x, 1)
+
+    def test_update_id_width_height_x_y_attrs(self):
+        r = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r.height, 10)
+        r.update(2, 1, 1, 1, 1)
+        self.assertEqual(r.id, 2)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 1)
+        self.assertEqual(r.x, 1)
+        self.assertEqual(r.y, 1)

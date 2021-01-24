@@ -97,8 +97,11 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        for i in range(self.height):
-            print('#' * self.width)
+        for i in range(self.height + self.y):
+            if i < self.y:
+                print()
+            else:
+                print((' ' * self.x) + ('#' * self.width))
 
     def __str__(self):
         """Retrun a custom representation of a rectangle object for print()"""
@@ -108,3 +111,17 @@ class Rectangle(Base):
                                                 self.y,
                                                 self.width,
                                                 self.height)
+
+    def update(self, *args, **kargs):
+        """Update attributes in this order id, width, height, x, y"""
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        size = len(args) if len(args) <= len(attrs) else len(attrs)
+        i = 0
+        for attr in attrs[:size]:
+            exec('self.{} = args[{}]'.format(attr, i))
+            i += 1
+        if kargs:
+            for k, v in kargs.items():
+                if k in attrs:
+                    exec('self.{} = {}'.format(k, v))
+
