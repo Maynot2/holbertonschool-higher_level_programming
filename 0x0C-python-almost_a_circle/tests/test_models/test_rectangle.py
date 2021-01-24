@@ -211,6 +211,27 @@ class TestRectangle(unittest.TestCase):
             r.display()
         self.assertEqual(fake_out.getvalue(), expected_rec)
 
+    def test_print_custom_str_representation_of_rectangele_2(self):
+        r = Rectangle(4, 6)
+        expected_rep = '[Rectangle] (1) 0/0 - 4/6\n'
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+            print(r)
+        self.assertEqual(fake_out.getvalue(), expected_rep)
+
+    def test_print_custom_str_representation_of_rectangele_3(self):
+        r = Rectangle(4, 6, 1)
+        expected_rep = '[Rectangle] (1) 1/0 - 4/6\n'
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+            print(r)
+        self.assertEqual(fake_out.getvalue(), expected_rep)
+
+    def test_print_custom_str_representation_of_rectangele_4(self):
+        r = Rectangle(4, 6, 1, 1)
+        expected_rep = '[Rectangle] (1) 1/1 - 4/6\n'
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+            print(r)
+        self.assertEqual(fake_out.getvalue(), expected_rep)
+
     def test_print_custom_str_representation_of_rectangele_1(self):
         r = Rectangle(4, 6, 2, 1, 12)
         expected_rep = '[Rectangle] (12) 2/1 - 4/6\n'
