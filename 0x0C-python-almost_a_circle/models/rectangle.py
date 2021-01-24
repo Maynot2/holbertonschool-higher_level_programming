@@ -7,6 +7,26 @@
 from models.base import Base
 
 
+def integer_validator(name, val):
+    """Raises Error if val is not an integer"""
+    if type(val) != int:
+        raise TypeError('{} must be an integer'.format(name))
+
+
+def positive_integer_validator(name, val):
+    """Raises an Error if val is not an integer or inferior to 0"""
+    integer_validator(name, val)
+    if val < 0:
+        raise ValueError('{} must be >= 0'.format(name))
+
+
+def strict_positive_integer_validator(name, val):
+    """Raises an Error if val is not an integer or inferior to 1"""
+    integer_validator(name, val)
+    if val < 1:
+        raise ValueError('{} must be > 0'.format(name))
+
+
 class Rectangle(Base):
     """
         Simulates a real life Rectangle
@@ -28,42 +48,63 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-        @property
-        def width(self):
-            """Getter for widh attribute"""
-            return self.__width
+    @property
+    def width(self):
+        """Getter for widh attribute"""
+        return self.__width
 
-        @width.setter
-        def width(self, val):
-            """Setter for widh attribute"""
-            self.__width == val
+    @width.setter
+    def width(self, val):
+        """Setter for widh attribute"""
+        strict_positive_integer_validator('width', val)
+        self.__width = val
 
-        @property
-        def height(self):
-            """Getter for height attribute"""
-            return self.__height
+    @property
+    def height(self):
+        """Getter for height attribute"""
+        return self.__height
 
-        @height.setter
-        def height(self, val):
-            """Setter for height attribute"""
-            self.__height == val
+    @height.setter
+    def height(self, val):
+        """Setter for height attribute"""
+        strict_positive_integer_validator('height', val)
+        self.__height = val
 
-        @property
-        def x(self):
-            """Getter for height attribute"""
-            return self.__x
+    @property
+    def x(self):
+        """Getter for height attribute"""
+        return self.__x
 
-        @x.setter
-        def x(self, val):
-            """Setter for height attribute"""
-            self.__x == val
+    @x.setter
+    def x(self, val):
+        """Setter for height attribute"""
+        positive_integer_validator('x', val)
+        self.__x = val
 
-        @property
-        def y(self):
-            """Getter for height attribute"""
-            return self.__y
+    @property
+    def y(self):
+        """Getter for height attribute"""
+        return self.__y
 
-        @y.setter
-        def y(self, val):
-            """Setter for height attribute"""
-            self.__y == val
+    @y.setter
+    def y(self, val):
+        """Setter for height attribute"""
+        positive_integer_validator('y', val)
+        self.__y = val
+
+    def area(self):
+        """Conputes the area of a rectangle given a height and width"""
+        return self.width * self.height
+
+    def display(self):
+        for i in range(self.height):
+            print('#' * self.width)
+
+    def __str__(self):
+        """Retrun a custom representation of a rectangle object for print()"""
+        return '[{}] ({}) {}/{} - {}/{}'.format(type(self).__name__,
+                                                self.id,
+                                                self.x,
+                                                self.y,
+                                                self.width,
+                                                self.height)
