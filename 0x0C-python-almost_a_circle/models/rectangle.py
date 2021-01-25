@@ -118,10 +118,11 @@ class Rectangle(Base):
         size = len(args) if len(args) <= len(attrs) else len(attrs)
         i = 0
         for attr in attrs[:size]:
-            exec('self.{} = args[{}]'.format(attr, i))
+            setattr(self, attr, args[i])
             i += 1
         if not args and kargs:
             for k, v in kargs.items():
                 if k in attrs:
-                    exec('self.{} = {}'.format(k, v))
+                    setattr(self, k, v)
+
 
