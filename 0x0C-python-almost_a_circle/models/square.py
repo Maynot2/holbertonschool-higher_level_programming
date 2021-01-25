@@ -20,6 +20,15 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, val):
+        self.width = val
+        self.height = val
+
     def __str__(self):
         """Retrun a custom representation of a rectangle object for print()"""
         return '[{}] ({}) {}/{} - {}/{}'.format(type(self).__name__,
@@ -28,3 +37,16 @@ class Square(Rectangle):
                                                 self.y,
                                                 self.width,
                                                 self.height)
+
+    def update(self, *args, **kargs):
+        """Update attributes in this order id, size, x, y"""
+        attrs = ['id', 'size', 'x', 'y']
+        size = len(args) if len(args) <= len(attrs) else len(attrs)
+        i = 0
+        for attr in attrs[:size]:
+            setattr(self, attr, args[i])
+            i += 1
+        if not args and kargs:
+            for k, v in kargs.items():
+                if k in attrs:
+                    setattr(self, k, v)
