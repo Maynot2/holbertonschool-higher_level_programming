@@ -314,3 +314,23 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.height, 1)
         self.assertEqual(r.x, 1)
         self.assertEqual(r.y, 1)
+
+    def test_dictionary_representation_1(self):
+        r = Rectangle(10, 2, 1, 9)
+        dic_rep = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        self.assertEqual(r.to_dictionary(), dic_rep)
+
+    def test_dictionary_representation_2(self):
+        r = Rectangle(10, 2, 1, 9, 10)
+        dic_rep = {'x': 1, 'y': 9, 'id': 10, 'height': 2, 'width': 10}
+        self.assertEqual(r.to_dictionary(), dic_rep)
+
+    def test_dictionary_representation_3(self):
+        r = Rectangle(10, 2)
+        dic_rep = {'x': 0, 'y': 0, 'id': 1, 'height': 2, 'width': 10}
+        self.assertEqual(r.to_dictionary(), dic_rep)
+
+    def test_dictionary_representation_4(self):
+        r = Rectangle(10, 2, 1)
+        dic_rep = {'x': 1, 'y': 0, 'id': 1, 'height': 2, 'width': 10}
+        self.assertEqual(r.to_dictionary(), dic_rep)
