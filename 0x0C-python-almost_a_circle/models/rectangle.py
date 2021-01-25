@@ -120,7 +120,7 @@ class Rectangle(Base):
         for attr in attrs[:size]:
             exec('self.{} = args[{}]'.format(attr, i))
             i += 1
-        if kargs:
+        if not args and kargs:
             for k, v in kargs.items():
                 if k in attrs:
                     exec('self.{} = {}'.format(k, v))
