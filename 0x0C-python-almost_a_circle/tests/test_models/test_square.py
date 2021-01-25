@@ -280,3 +280,23 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(sqr.size, 13)
         self.assertEqual(sqr.x, 14)
         self.assertEqual(sqr.y, 15)
+
+    def test_dictionary_representation_square_1(self):
+        sqr = Square(10, 2, 1)
+        dic_rep = {'x': 2, 'y': 1, 'id': 1, 'size': 10}
+        self.assertEqual(sqr.to_dictionary(), dic_rep)
+
+    def test_dictionary_representation_square_2(self):
+        sqr = Square(10, 2, 1, 9)
+        dic_rep = {'x': 2, 'y': 1, 'id': 9, 'size': 10}
+        self.assertEqual(sqr.to_dictionary(), dic_rep)
+
+    def test_dictionary_representation_square_3(self):
+        sqr = Square(10, 2)
+        dic_rep = {'x': 2, 'y': 0, 'id': 1, 'size': 10}
+        self.assertEqual(sqr.to_dictionary(), dic_rep)
+
+    def test_dictionary_representation_square_4(self):
+        sqr = Square(10)
+        dic_rep = {'x': 0, 'y': 0, 'id': 1, 'size': 10}
+        self.assertEqual(sqr.to_dictionary(), dic_rep)
