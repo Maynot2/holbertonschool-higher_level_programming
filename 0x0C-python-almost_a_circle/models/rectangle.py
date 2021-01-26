@@ -97,6 +97,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
+        """Prints a rectangle made of '#' to stdout"""
         for i in range(self.height + self.y):
             if i < self.y:
                 print()
@@ -126,6 +127,7 @@ class Rectangle(Base):
                     setattr(self, k, v)
 
     def to_dictionary(self):
+        """Transform a rectangle into a dictionary"""
         return {
             'x': self.x,
             'y': self.y,
