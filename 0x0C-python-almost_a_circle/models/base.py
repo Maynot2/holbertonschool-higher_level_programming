@@ -70,3 +70,9 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        shape = cls(1, 1)
+        shape.update(**dictionary)
+        return shape
