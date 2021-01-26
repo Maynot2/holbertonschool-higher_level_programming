@@ -52,6 +52,7 @@ class Square(Rectangle):
                     setattr(self, k, v)
 
     def to_dictionary(self):
+        """Transform a square into a dictionary"""
         return {
             'x': self.x,
             'y': self.y,
