@@ -42,7 +42,7 @@ class Base:
         if list_dictionaries == [] or list_dictionaries is None:
             return '[]'
         if is_list_of_dicts(list_dictionaries):
-            return json.dumps(list_dictionaries)
+            return json.dumps(list_dictionaries, sort_key=True)
 
     @classmethod
     def is_list_of_shapes(cls, l):
