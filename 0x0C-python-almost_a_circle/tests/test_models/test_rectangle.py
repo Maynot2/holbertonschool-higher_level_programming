@@ -80,65 +80,37 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(1, 2, 3, 4)
         self.assertEqual(r.y, 4)
 
-    def test_is_error_str_width(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle('1', 2, 3, 4)
-        self.assertEqual(str(error.exception), 'width must be an integer')
+    def test_wrong_arg_raises_error_for_width(self):
+        wrong_args = ['1', 1.0, complex(1), True, [], (), {1, 2}, range(1),
+                      {'one': 1, 'two': 2}]
+        for arg in wrong_args:
+            with self.assertRaises(TypeError) as error:
+                Rectangle(arg, 2, 3, 4)
+            self.assertEqual(str(error.exception), 'width must be an integer')
 
-    def test_is_error_float_width(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1.0, 2, 3, 4)
-        self.assertEqual(str(error.exception), 'width must be an integer')
+    def test_wrong_arg_raises_error_for_height(self):
+        wrong_args = ['1', 1.0, complex(1), True, [], (), {1, 2}, range(1),
+                      {'one': 1, 'two': 2}]
+        for arg in wrong_args:
+            with self.assertRaises(TypeError) as error:
+                Rectangle(1, arg, 3, 4)
+            self.assertEqual(str(error.exception), 'height must be an integer')
 
-    def test_is_error_bool_width(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(True, 2, 3, 4)
-        self.assertEqual(str(error.exception), 'width must be an integer')
+    def test_wrong_arg_raises_error_for_x(self):
+        wrong_args = ['1', 1.0, complex(1), True, [], (), {1, 2}, range(1),
+                      {'one': 1, 'two': 2}]
+        for arg in wrong_args:
+            with self.assertRaises(TypeError) as error:
+                Rectangle(1, 2, arg, 4)
+            self.assertEqual(str(error.exception), 'x must be an integer')
 
-    def test_is_error_complex__height(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, complex(2), 3, 4)
-        self.assertEqual(str(error.exception), 'height must be an integer')
-
-    def test_is_error_list_height(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, [2], 3, 4)
-        self.assertEqual(str(error.exception), 'height must be an integer')
-
-    def test_is_error_tuple_height(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, (2, ), 3, 4)
-        self.assertEqual(str(error.exception), 'height must be an integer')
-
-    def test_is_error_range_x(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, 2, range(0, 3), 4)
-        self.assertEqual(str(error.exception), 'x must be an integer')
-
-    def test_is_error_byte_x(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, 2, bytes(3), 4)
-        self.assertEqual(str(error.exception), 'x must be an integer')
-
-    def test_is_error_dict_x(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, 2, {'three': 3, 'five': 5}, 4)
-        self.assertEqual(str(error.exception), 'x must be an integer')
-
-    def test_is_error_bytearray_y(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, 2, 3, bytearray(4))
-        self.assertEqual(str(error.exception), 'y must be an integer')
-
-    def test_is_error_set_y(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, 2, 3, set([4, 5]))
-        self.assertEqual(str(error.exception), 'y must be an integer')
-
-    def test_is_error_frozenset_y(self):
-        with self.assertRaises(TypeError) as error:
-            Rectangle(1, 2, 3, frozenset([4, 5]))
-        self.assertEqual(str(error.exception), 'y must be an integer')
+    def test_wrong_arg_raises_error_for_y(self):
+        wrong_args = ['1', 1.0, complex(1), True, [], (), {1, 2}, range(1),
+                      {'one': 1, 'two': 2}]
+        for arg in wrong_args:
+            with self.assertRaises(TypeError) as error:
+                Rectangle(1, 2, 3, arg)
+            self.assertEqual(str(error.exception), 'y must be an integer')
 
     def test_is_error_negative_x(self):
         with self.assertRaises(ValueError) as error:
