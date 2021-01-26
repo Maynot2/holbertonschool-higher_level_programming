@@ -5,6 +5,7 @@
 """
 
 import json
+import os.path
 
 
 def is_list_of_dicts(l):
@@ -78,10 +79,14 @@ class Base:
         shape.update(**dictionary)
         return shape
 
-    '''
     @classmethod
     def load_from_file(cls):
         """Create a list from instances from file"""
+        list_shapes = []
         filename = '{}.json'.format(cls.__name__)
-        with open(filename) as f:
-    '''
+        if os.path.isfile(filename):
+            with open(filename) as f:
+                shapes = cls.from_json_string(f.read())
+                for shape in shapes:
+                    list_shapes.append(cls.create(**shape))
+        return list_shapes
