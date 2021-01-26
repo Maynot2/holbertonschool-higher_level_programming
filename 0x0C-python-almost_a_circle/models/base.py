@@ -42,7 +42,7 @@ class Base:
         if list_dictionaries == [] or list_dictionaries is None:
             return '[]'
         if is_list_of_dicts(list_dictionaries):
-            return json.dumps(list_dictionaries, sort_key=True)
+            return json.dumps(list_dictionaries, sort_keys=True)
 
     @classmethod
     def is_list_of_shapes(cls, l):
@@ -73,6 +73,15 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Create new instance from dictionary"""
         shape = cls(1, 1)
         shape.update(**dictionary)
         return shape
+
+    '''
+    @classmethod
+    def load_from_file(cls):
+        """Create a list from instances from file"""
+        filename = '{}.json'.format(cls.__name__)
+        with open(filename) as f:
+    '''
