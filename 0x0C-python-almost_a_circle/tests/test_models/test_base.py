@@ -70,3 +70,6 @@ class TestBase(unittest.TestCase):
         ls = '[{"height": 7, "id": 1, "width": 10, "x": 2, "y": 8}]'
         res = Base.to_json_string(l)
         self.assertEqual(ls, res)
+
+if __name__ == '__main__':
+    unittest.main()

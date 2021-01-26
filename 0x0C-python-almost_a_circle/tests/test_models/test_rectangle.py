@@ -193,63 +193,63 @@ class TestRectangle(unittest.TestCase):
     def test_display_rectangle_1x1_correctly(self):
         r = Rectangle(1, 1)
         expected_rec = '#\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
         self.assertEqual(fake_out.getvalue(), expected_rec)
 
     def test_display_rectangle_4x4_correctly(self):
         r = Rectangle(4, 4)
         expected_rec = '####\n####\n####\n####\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
         self.assertEqual(fake_out.getvalue(), expected_rec)
 
     def test_display_rectangle_3x2_correctly(self):
         r = Rectangle(3, 2)
         expected_rec = '###\n###\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
         self.assertEqual(fake_out.getvalue(), expected_rec)
 
     def test_display_rectangle_3wX2h_1xX1y_correctly(self):
         r = Rectangle(3, 2, 1, 1)
         expected_rec = '\n ###\n ###\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
         self.assertEqual(fake_out.getvalue(), expected_rec)
 
     def test_display_rectangle_3wX3h_2xX3y_correctly(self):
         r = Rectangle(3, 3, 2, 3)
         expected_rec = '\n\n\n  ###\n  ###\n  ###\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
         self.assertEqual(fake_out.getvalue(), expected_rec)
 
     def test_print_custom_str_representation_of_rectangele_2(self):
         r = Rectangle(4, 6)
         expected_rep = '[Rectangle] (1) 0/0 - 4/6\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             print(r)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
     def test_print_custom_str_representation_of_rectangele_3(self):
         r = Rectangle(4, 6, 1)
         expected_rep = '[Rectangle] (1) 1/0 - 4/6\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             print(r)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
     def test_print_custom_str_representation_of_rectangele_4(self):
         r = Rectangle(4, 6, 1, 1)
         expected_rep = '[Rectangle] (1) 1/1 - 4/6\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             print(r)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
     def test_print_custom_str_representation_of_rectangele_1(self):
         r = Rectangle(4, 6, 2, 1, 12)
         expected_rep = '[Rectangle] (12) 2/1 - 4/6\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             print(r)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
@@ -334,3 +334,6 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(10, 2, 1)
         dic_rep = {'x': 1, 'y': 0, 'id': 1, 'height': 2, 'width': 10}
         self.assertEqual(r.to_dictionary(), dic_rep)
+
+if __name__ == '__main__':
+    unittest.main()

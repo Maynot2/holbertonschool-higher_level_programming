@@ -35,28 +35,28 @@ class TestSquare(unittest.TestCase):
     def test_display_square_3s_1xX1y_correctly(self):
         sqr = Square(3, 1, 1)
         expected_sqr = '\n ###\n ###\n ###\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             sqr.display()
         self.assertEqual(fake_out.getvalue(), expected_sqr)
 
     def test_print_custom_str_representation_of_square_1(self):
         sqr = Square(4)
         expected_rep = '[Square] (1) 0/0 - 4/4\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             print(sqr)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
     def test_print_custom_str_representation_of_square_2(self):
         sqr = Square(4, 1, 1)
         expected_rep = '[Square] (1) 1/1 - 4/4\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             print(sqr)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
     def test_print_custom_str_representation_of_square_3(self):
         sqr = Square(4, 1, 1, 12)
         expected_rep = '[Square] (12) 1/1 - 4/4\n'
-        with patch('sys.stdout', new = StringIO()) as fake_out:
+        with patch('sys.stdout', new=StringIO()) as fake_out:
             print(sqr)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
@@ -300,3 +300,6 @@ class TestSquare(unittest.TestCase):
         sqr = Square(10)
         dic_rep = {'x': 0, 'y': 0, 'id': 1, 'size': 10}
         self.assertEqual(sqr.to_dictionary(), dic_rep)
+
+if __name__ == '__main__':
+    unittest.main()
