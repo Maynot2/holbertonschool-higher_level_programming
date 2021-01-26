@@ -5,6 +5,7 @@
 """
 
 import unittest
+import collections
 from models.base import Base
 
 
@@ -51,3 +52,21 @@ class TestBase(unittest.TestCase):
         b3 = Base(12)
         b4 = Base()
         self.assertEqual(Base._Base__nb_objects, 3)
+
+    def test_convert_empty_list_of_dicts_to_json_str(self):
+        l = []
+        ls = '[]'
+        res = Base.to_json_string(l)
+        self.assertEqual(ls, res)
+
+    def test_convert_None_to_json_str(self):
+        l = None
+        ls = '[]'
+        res = Base.to_json_string(l)
+        self.assertEqual(ls, res)
+
+    def test_convert_list_of_dicts_to_json_str_1(self):
+        l = [{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}]
+        ls = '[{"height": 7, "id": 1, "width": 10, "x": 2, "y": 8}]'
+        res = Base.to_json_string(l)
+        self.assertEqual(ls, res)
