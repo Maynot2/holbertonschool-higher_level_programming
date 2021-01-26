@@ -12,7 +12,7 @@ def is_list_of_dicts(self):
     if type(l) not list:
         return False
     for item in l:
-        if type(item) not dict
+        if type(item) not dict:
             return False
     return True
 
@@ -38,9 +38,10 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        if list_dictionaries == [] or list_dictionaries == None:
+        """Convert a list of dictionaries to json strings"""
+        if list_dictionaries == [] or list_dictionaries is None:
             return '[]'
-        if is_list_of_dicts(list_dictionaries)
+        if is_list_of_dicts(list_dictionaries):
             return json.dumps(list_dictionaries, sort_keys=True)
 
     @classmethod
@@ -49,7 +50,7 @@ class Base:
         if type(l) not list:
             return False
         for item in l:
-            if not isinstance(item, cls)
+            if not isinstance(item, cls):
                 return False
         return True
 
