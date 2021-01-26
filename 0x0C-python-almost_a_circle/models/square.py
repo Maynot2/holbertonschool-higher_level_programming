@@ -32,10 +32,10 @@ class Square(Rectangle):
     def __str__(self):
         """Retrun a custom representation of a square object for print()"""
         return '[{}] ({}) {}/{} - {}'.format(type(self).__name__,
-                                                self.id,
-                                                self.x,
-                                                self.y,
-                                                self.size)
+                                             self.id,
+                                             self.x,
+                                             self.y,
+                                             self.size)
 
     def update(self, *args, **kargs):
         """Update attributes in this order id, size, x, y"""
