@@ -30,13 +30,12 @@ class Square(Rectangle):
         self.height = val
 
     def __str__(self):
-        """Retrun a custom representation of a rectangle object for print()"""
-        return '[{}] ({}) {}/{} - {}/{}'.format(type(self).__name__,
+        """Retrun a custom representation of a square object for print()"""
+        return '[{}] ({}) {}/{} - {}'.format(type(self).__name__,
                                                 self.id,
                                                 self.x,
                                                 self.y,
-                                                self.width,
-                                                self.height)
+                                                self.size)
 
     def update(self, *args, **kargs):
         """Update attributes in this order id, size, x, y"""
