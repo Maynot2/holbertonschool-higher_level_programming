@@ -41,21 +41,21 @@ class TestSquare(unittest.TestCase):
 
     def test_print_custom_str_representation_of_square_1(self):
         sqr = Square(4)
-        expected_rep = '[Square] (1) 0/0 - 4/4\n'
+        expected_rep = '[Square] (1) 0/0 - 4\n'
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(sqr)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
     def test_print_custom_str_representation_of_square_2(self):
         sqr = Square(4, 1, 1)
-        expected_rep = '[Square] (1) 1/1 - 4/4\n'
+        expected_rep = '[Square] (1) 1/1 - 4\n'
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(sqr)
         self.assertEqual(fake_out.getvalue(), expected_rep)
 
     def test_print_custom_str_representation_of_square_3(self):
         sqr = Square(4, 1, 1, 12)
-        expected_rep = '[Square] (12) 1/1 - 4/4\n'
+        expected_rep = '[Square] (12) 1/1 - 4\n'
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(sqr)
         self.assertEqual(fake_out.getvalue(), expected_rep)
