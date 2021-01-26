@@ -7,12 +7,12 @@
 import json
 
 
-def is_list_of_dicts(self):
+def is_list_of_dicts(l):
     """Check if passed argument l is a list of dicts"""
-    if type(l) not list:
+    if type(l) is not list:
         return False
     for item in l:
-        if type(item) not dict:
+        if type(item) is not dict:
             return False
     return True
 
@@ -47,7 +47,7 @@ class Base:
     @classmethod
     def is_list_of_shapes(cls, l):
         """Check if passed argument l is a list of shapes"""
-        if type(l) not list:
+        if type(l) is not list:
             return False
         for item in l:
             if not isinstance(item, cls):
