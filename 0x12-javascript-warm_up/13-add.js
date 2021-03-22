@@ -5,4 +5,4 @@ function add (a, b) {
   return a + b;
 }
 
-exports.add;
+exports.add = add;
