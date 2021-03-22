@@ -1,17 +1,13 @@
 #!/usr/bin/node
 'use strcit';
 
-const nums = process.argv.slice(2, process.argv.length).map(el => Number(el));
-let max = nums[0];
-let secondMax = nums[0];
+const nums = process.argv.slice(2, process.argv.length).reduce((acc, curr) => {
+  if (Number(curr)) acc.push(Number(curr))
+  return acc;
+}, [])
 
-for (let i = 0; i < nums.length; i++) {
-  if (nums[i] >= max) max = nums[i];
-  for (let j = 0; j < nums.length; j++) {
-    if (nums[j] >= secondMax && nums[j] < max) {
-      secondMax = nums[j];
-    }
-  }
+if (nums.length < 2) {
+  console.log(0);
+} else {
+  console.log(nums.sort((a, b) => b - a)[1]);
 }
-
-console.log(secondMax);
