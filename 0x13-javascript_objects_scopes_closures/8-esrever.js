@@ -2,7 +2,13 @@
 'use strict';
 
 function esrever (list) {
-  return list.reverse();
+  const newList = [];
+
+  for (let i = list.length - 1; i >= 0; i--) {
+    newList.push(list[i]);
+  }
+
+  return newList;
 }
 
 exports.esrever = esrever;
