@@ -1,8 +1,6 @@
 #!/usr/bin/node
 'use strict';
 
-class Rectangle {
-  constructor () {}
-}
+class Rectangle {}
 
 module.exports = Rectangle;
