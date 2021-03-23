@@ -10,14 +10,11 @@ class Rectangle {
   }
 
   print (char = 'X') {
-    let rec = '';
-    for (let i = 0; i < this.height; i++) {
-      for (let j = 0; j < this.width; j++) {
-        rec += char;
+    if (this.height) {
+      for (let i = 0; i < this.height; i++) {
+          console.log(char.repeat(this.width));
+        }
       }
-      if (i !== this.height - 1) rec += '\n';
-    }
-    if (this.width) console.log(rec);
   }
 
   rotate () {
