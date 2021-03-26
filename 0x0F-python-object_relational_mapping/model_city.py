@@ -18,7 +18,3 @@ class City(Base):
     name = Column(String(128))
     state_id = Column(Integer, ForeignKey("states.id"))
     state = relationship("State", backref="cities")
-
-    def __init__(self, name):
-        self.name = name
-        self.state = state
