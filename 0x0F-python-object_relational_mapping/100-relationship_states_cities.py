@@ -28,6 +28,6 @@ if __name__ == "__main__":
 
     ca.cities.append(sa)
 
-    session.add_all([ca, sa])
+    session.add(ca)
     session.commit()
     session.close()
