@@ -12,6 +12,7 @@ from model_state import Base
 
 
 class City(Base):
+    """City Model"""
     __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True)
