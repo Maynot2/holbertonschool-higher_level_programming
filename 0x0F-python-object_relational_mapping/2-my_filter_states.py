@@ -19,7 +19,9 @@ if __name__ == '__main__':
             db=creds[2]
     )
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY {}".format(state))
+    cur.execute(
+            "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(state)
+    )
     rows = cur.fetchall()
     for row in rows:
         print('{}'.format(row))
