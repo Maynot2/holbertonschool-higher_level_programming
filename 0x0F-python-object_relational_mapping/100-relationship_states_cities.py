@@ -23,11 +23,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    sf = City(name='San Francisco')
+    seesion.add(sf)
+
     ca = State(name='California')
-    sa = City(name='San Francisco')
-
-    ca.cities.append(sa)
-
+    ca.cities.append(sf)
     session.add(ca)
+
     session.commit()
     session.close()
