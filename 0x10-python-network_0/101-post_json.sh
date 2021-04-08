@@ -1,3 +1,3 @@
 #!/bin/bash
 # Send json
-curl --data "$2" -H 'Content-Type: application/json' "$1"
+curl -d @"$2" -H 'Content-Type: application/json' $1
