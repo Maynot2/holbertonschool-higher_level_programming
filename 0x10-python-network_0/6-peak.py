@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Finds a peak"""
 
+
 def find_peak(list_of_integers):
     """Finds a peak"""
     size = len(list_of_integers)
@@ -14,6 +15,6 @@ def find_peak(list_of_integers):
         else:
             next_n = list_of_integers[i + 1]
         curr_n = list_of_integers[i]
-        if  curr_n >= prev_n and curr_n >= next_n:
-            return curr_n;
+        if curr_n >= prev_n and curr_n >= next_n:
+            return curr_n
     return None
