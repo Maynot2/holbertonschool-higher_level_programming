@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+""" Finds a peak"""
 
 def find_peak(list_of_integers):
+    """Finds a peak"""
     size = len(list_of_integers)
     for i in range(size):
         if i == 0:
