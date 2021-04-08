@@ -1,3 +1,3 @@
 #!/bin/bash
 # Request with DELETE verb
-curl -X DELETE $1
+curl -Ls -X DELETE $1
