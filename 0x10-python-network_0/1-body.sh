@@ -1,3 +1,3 @@
 #!/bin/bash
-# Displays the size of the body of the response
+# Displays the body of a valid response even after e redirect
 curl -Ls $1
