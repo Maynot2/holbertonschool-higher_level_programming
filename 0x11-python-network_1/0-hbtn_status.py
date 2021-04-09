@@ -14,6 +14,5 @@ if __name__ == '__main__':
 Body response:
     - type: {}
     - content: {}
-    - utf8 content: {}\
-        '''.format(type(resp), resp, content)
+    - utf8 content: {}'''.format(type(resp), resp, content)
         print(body)
