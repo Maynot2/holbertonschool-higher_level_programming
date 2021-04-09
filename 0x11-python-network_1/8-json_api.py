@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-    Fetches https://intranet.hbtn.io/status using requests package
+    sends a POST request to http://0.0.0.0:5000/search_user with a letter as
+    parameter.
 """
 
 import requests
