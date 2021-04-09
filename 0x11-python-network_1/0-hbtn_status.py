@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-            print(response.read().decode('utf-8'))
 """
     Fetches https://intranet.hbtn.io/status
 """
