@@ -4,14 +4,14 @@
     Handles HTTP errors
 """
 
-import urllib
+from urllib import request, error
 from sys import argv
 
 
 if __name__ == '__main__':
-    req = urllib.request.Request(argv[1])
     try:
-        response = urllib.request.urlopen(req)
-        print(response.read().decode('utf-8'))
-    except urlib.error.HTTPError as err:
+        req = request.Request(argv[1])
+        with request.urlopen(req) as response:
+            print(response.read().decode('utf-8'))
+    except error.HTTPError as err:
         print('Error code: {}'.format(err.code))
