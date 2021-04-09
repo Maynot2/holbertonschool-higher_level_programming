@@ -8,9 +8,6 @@ from urllib import request, parse
 from sys import argv
 
 
-
-
-
 if __name__ == '__main__':
     data = parse.urlencode({'email': argv[2]})
     data = data.encode('utf-8')
