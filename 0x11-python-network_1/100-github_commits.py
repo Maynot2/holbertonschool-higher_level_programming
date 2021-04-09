@@ -7,6 +7,7 @@
 import requests
 from sys import argv
 
+
 if __name__ == '__main__':
     sha = argv[1]
     repo = argv[2]
