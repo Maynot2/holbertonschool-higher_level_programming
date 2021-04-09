@@ -18,4 +18,4 @@ if __name__ == '__main__':
         json = resp.json()
         print('{}'.format(json['id']))
     except:
-        print('Not a valid JSON')
+        print(None)
